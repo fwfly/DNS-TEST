@@ -13,10 +13,18 @@ docker-compose up
 Inside of pdns container
 ```
 pdnsutil --config-dir /etc/powerdns/ create-zone test
+
+pdnsutil --config-dir /etc/powerdns/ add-record test ns1 A 172.20.0.2
+pdnsutil --config-dir /etc/powerdns/ add-record test @ NS ns1.test.
 pdnsutil --config-dir /etc/powerdns/ add-record test aa A 192.168.1.1
 
 ```
+
 Test dig 
 ```
 dig -p 1053 aa.test @localhost
 ```
+
+
+To do :
+* recursor forward zone doesn't work
