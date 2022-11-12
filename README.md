@@ -26,5 +26,10 @@ dig -p 1053 aa.test @localhost
 ```
 
 
+wipe recursor cache
+```
+rec_control wipe-cache www.example.com
+```
+
 To do :
 * recursor forward zone doesn't work
